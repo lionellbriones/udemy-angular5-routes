@@ -1,3 +1,4 @@
+import { ServerResolver } from './servers/server/server-resolver.server';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -36,7 +37,7 @@ import { ErrorPageComponent } from './error-page/error-page.component';
     HttpModule,
     AppRoutingModule
   ],
-  providers: [ServersService, AuthService, AuthGuard, CanDeactivateGuard],
+  providers: [ServersService, AuthService, AuthGuard, CanDeactivateGuard, ServerResolver],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,3 +1,4 @@
+import { ServerResolver } from './servers/server/server-resolver.server';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
@@ -22,7 +23,7 @@ const routes: Routes = [
         canActivateChild: [AuthGuard],
         component: ServersComponent,
         children: [
-            { path: ':id', component: ServerComponent },
+            { path: ':id', component: ServerComponent, resolve: {server: ServerResolver} },
             { path: ':id/edit', component: EditServerComponent, canDeactivate: [CanDeactivateGuard] },
         ]
     },
